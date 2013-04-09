@@ -1,0 +1,62 @@
+<head>
+  <title>chipotle-counter</title>
+</head>
+
+<body>
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <h1>Chipotle Calorie Counter</h1>
+  {{greeting}}
+  {{totalCalories}}
+  <form>
+	  <label>Choose a type of rice: </label><br>
+	  <label>White Rice
+		  <input type="radio" class="rice" name="rice" value="white_rice">
+		</label>
+	  <label>Brown Rice
+		  <input type="radio" class="rice" name="rice" value="brown_rice">
+		</label><br><br>
+
+		<label>Choose a type of bean:</label><br>
+		<label>Black
+		  <input type="radio" class="beans" value="black_beans">
+		</label>
+	  <label>Pinto
+		  <input type="radio" class="beans" value="pinto_beans">
+		</label><br><br>
+
+		<label>Choose a type of meat:</label><br>
+		<label>Steak
+		  <input type="radio" name="meat" value="steak">
+		</label>
+	  <label>Barbacoa
+		  <input type="radio" name="meat" value="barbacoa">
+		</label><br><br>
+
+		<label>What salsas?</label><br>
+		<label>Mild
+		  <input type="checkbox" name="salsa[]" value="mild">
+		</label>
+	  <label>Medium
+		  <input type="checkbox" name="salsa[]" value="medium">
+		</label>
+	  <label>Hot
+		  <input type="checkbox" name="salsa[]" value="hot">
+		</label><br><br>
+
+		<label>Sour cream</label><br>
+		<input type="checkbox" name="sour_cream" value="sour_cream"><br>
+
+		<label>Cheese?</label><br>
+		<input type="checkbox" name="cheese" value="cheese"><br>
+
+		<label>Guacamole?</label><br>
+		<input type="checkbox" name="guacamole" value="guacamole"><br>
+
+		<label>Lettuce?</label><br>
+		<input type="checkbox" name="lettuce" value="lettuce">
+  </form>
+
+</template>
