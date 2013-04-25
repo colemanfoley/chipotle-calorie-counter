@@ -1,39 +1,78 @@
 if (Meteor.isClient) {
-  Template.hello.greeting = function () {
-    return "Welcome to chipotle-counter.";
-  };
-
-  Template.hello.totalCalories = function () {
-    return Session.get("totalCalories");
+  Session.set("riceCalories", 0);
+  Session.set("beansCalories", 0);
+  Session.set("meatCalories", 0);
+  Session.set("salsaCalories", 0);
+  Session.set("extrasCalories", 0);
+  Template.introduction.totalCalories = function () {
+    return Session.get('riceCalories') + Session.get('beansCalories') + Session.get('meatCalories') + Session.get("extrasCalories"); 
   }
 
-  Template.hello.events({
+  Template.chooseRice.events({
     'click .rice' : function () {
       // template data, if any, is available in 'this'
-      var rice_type = $('input:checked').val();
+      var rice_type = $('input.rice:checked').val();
       if (rice_type === "brown_rice") {
-        Session.set("totalCalories", 160);
-        console.log(Session.get("totalCalories"));
+        Session.set("riceCalories", 160);
+      } else if (rice_type === "white_rice") {
+        Session.set("riceCalories", 170);
       } else {
-        Session.set("totalCalories", 170);
+        Session.set("riceCalories", 0);
       }
-    },
+    }
+  });
 
+  Template.chooseBeans.events({
     'click .beans' : function () {
       // template data, if any, is available in 'this'
-      var beans_type = $('input:checked').val();
-      var currentCalories =  Session.get("totalCalories");      
-      if (beans_type === "black_beans") {
-
+      var beans_type = $('input.beans:checked').val();
+      if (beans_type === "black_beans" || "pinto_beans") {
+        Session.set("beansCalories", 120);
       } else {
-        Session.set("totalCalories", 170);
+        Session.set("beansCalories", 0);
       }
-    }    
+    }
   });
-}
 
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
+  Template.chooseMeat.events({
+    'click .meat' : function () {
+      //template data, if any, is available in 'this'
+      var meat_type = $('input.meat:checked').val();
+      if (meat_type === "steak") {
+        Session.set("meatCalories", 120);
+      } else if (meat_type === "barbacoa") {
+        Session.set("meatCalories", 170);
+      } else if (meat_type === "chicken" || "carnitas") {
+        Session.set("meatCalories", 190)
+      } else {
+        Session.set("meatCalories", 0);
+      }
+    }
+  });
+
+  Template.chooseExtras.events({
+    'click .extra' : function () {
+      //template data, if any, is available in 'this'
+      var extrasCalories = 0;
+      Session.set("extrasCalories", 0);
+      $('input.extra:checked').each(function(element){
+        if(this.value === "mild"){
+          extrasCalories += 20;
+        } else if (this.value === "medium") {
+          extrasCalories += 15;
+        } else if (this.value === "hot") {
+          extrasCalories += 40;
+        } else if (this.value === "sour_cream"){
+          extrasCalories += 120;
+        } else if (this.value === "cheese"){
+          extrasCalories += 100;
+        } else if (this.value === "guacamole"){
+          extrasCalories += 150;
+        } else if (this.value === "lettuce"){
+          extrasCalories += 5;
+        }
+        Session.set("extrasCalories", extrasCalories);
+      });
+    }
   });
 }
