@@ -1,4 +1,6 @@
 /* CSS declarations go here */
 #totalCalories {
-	margin-left: 300px;
+	position: absolute;
+	left: 300px;
+	font-size: 200%;
 }
