@@ -32,6 +32,6 @@ img	{
 	width: 100%
 }
 
-#rice, #beans, #meat, #salsa, #other {
+#other {
 	display: none;
 }
