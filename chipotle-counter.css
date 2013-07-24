@@ -1,6 +1,5 @@
 /* CSS declarations go here */
-#totalCalories {
-	position: absolute;
-	left: 300px;
-	font-size: 200%;
+
+fieldset {
+	max-width: 500px;
 }

@@ -3,75 +3,60 @@
 </head>
 
 <body>
-  {{> introduction}}
-  {{> chooseRice}}
-  {{> chooseBeans}}
-  {{> chooseMeat}}
-  {{> chooseExtras}}
+	{{> introduction}}
+	<form>
+	  {{> chooseRice}}
+	  {{> chooseBeans}}
+	  {{> chooseMeat}}
+	  {{> chooseExtras}}
+	</form>
 </body>
 
 <template name="introduction">
   <h1>Chipotle Calorie Counter</h1>
-  <div id="totalCalories">Total Calories: {{totalCalories}}</div>
+  <h2 id="totalCalories">Total Calories: {{totalCalories}}</h2>
 </template>
 
 <template name="chooseRice">
-  <label>Choose a type of rice: </label><br>
-  <label>White Rice
-	  <input type="radio" class="rice" name="rice" value="white_rice">
-	</label>
-  <label>Brown Rice
-	  <input type="radio" class="rice" name="rice" value="brown_rice">
-	</label><br><br>
+  <fieldset>
+  	<legend>Choose a type of rice:</legend>
+	  <label><input type="radio" class="rice" name="rice" value="white_rice">White Rice</label>
+	  <label><input type="radio" class="rice" name="rice" value="brown_rice">Brown Rice</label>
+  </fieldset>
 </template>
 
 <template name="chooseBeans">
-	<label>Choose a type of bean:</label><br>
-	<label>Black
-	  <input type="radio" class="beans" name="beans" value="black_beans">
-	</label>
-  <label>Pinto
-	  <input type="radio" class="beans" name="beans" value="pinto_beans">
-	</label><br><br>
+	<fieldset>
+		<legend>Choose a type of bean:</legend>
+		<label><input type="radio" class="beans" name="beans" value="black_beans">Black</label>
+	  <label><input type="radio" class="beans" name="beans" value="pinto_beans">Pinto</label>
+	</fieldset>
 </template>
 
 <template name="chooseMeat">
-	<label>Choose a type of meat:</label><br>
-	<label>Steak
-	  <input type="radio" name="meat" class="meat" value="steak">
-	</label>
-	<label>Chicken
-	  <input type="radio" name="meat" class="meat" value="chicken">
-	</label>
-	<label>Carnitas
-	  <input type="radio" name="meat" class="meat" value="carnitas">
-	</label>
-  <label>Barbacoa
-	  <input type="radio" name="meat" class="meat" value="barbacoa">
-	</label><br><br>
+	<fieldset>
+		<legend>Choose a type of meat:</legend>
+		<label><input type="radio" name="meat" class="meat" value="steak">Steak</label>
+		<label><input type="radio" name="meat" class="meat" value="chicken">Chicken</label>
+		<label><input type="radio" name="meat" class="meat" value="carnitas">Carnitas</label>
+	  <label><input type="radio" name="meat" class="meat" value="barbacoa">Barbacoa</label>
+	</fieldset>
 </template>
 
 <template name="chooseExtras">
-	<label>Which salsas?</label><br>
-	<label>Mild
-	  <input type="checkbox" name="salsa" class="extra" value="mild">
-	</label>
-  <label>Medium
-	  <input type="checkbox" name="salsa" class="extra" value="medium">
-	</label>
-  <label>Hot
-	  <input type="checkbox" name="salsa" class="extra" value="hot">
-	</label><br><br>
+	<fieldset>
+		<legend>Which salsas?</legend>
+		<label><input type="checkbox" name="salsa" class="extra" value="mild">Mild</label>
+	  <label><input type="checkbox" name="salsa" class="extra" value="medium">Medium</label>
+	  <label><input type="checkbox" name="salsa" class="extra" value="hot">Hot</label>
+	</fieldset>
 
-	<label>Sour cream</label><br>
-	<input type="checkbox" name="sour_cream" class="extra" value="sour_cream"><br>
+	<fieldset>
+		<legend>Extras</legend>
+		<label><input type="checkbox" name="sour_cream" class="extra" value="sour_cream">Sour cream</label>
+		<label><input type="checkbox" name="cheese" class="extra" value="cheese">Cheese?</label>
+		<label><input type="checkbox" name="guacamole" class="extra" value="guacamole">Guacamole?</label>
+		<label><input type="checkbox" name="lettuce" class="extra" value="lettuce">Lettuce?</label>
+	</fieldset>
 
-	<label>Cheese?</label><br>
-	<input type="checkbox" name="cheese" class="extra" value="cheese"><br>
-
-	<label>Guacamole?</label><br>
-	<input type="checkbox" name="guacamole" class="extra" value="guacamole"><br>
-
-	<label>Lettuce?</label><br>
-	<input type="checkbox" name="lettuce" class="extra" value="lettuce">
 </template>
