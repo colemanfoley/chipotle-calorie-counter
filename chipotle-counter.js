@@ -4,9 +4,11 @@ if (Meteor.isClient) {
   Session.set("meatCalories", 0);
   Session.set("salsaCalories", 0);
   Session.set("extrasCalories", 0);
+
   Template.introduction.totalCalories = function () {
-    return Session.get('riceCalories') + Session.get('beansCalories') + Session.get('meatCalories') + Session.get("extrasCalories"); 
-  }
+    return Session.get('riceCalories') + Session.get('beansCalories')
+    + Session.get('meatCalories') + Session.get("extrasCalories");
+  };
 
   Template.chooseRice.events({
     'click .rice' : function () {

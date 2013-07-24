@@ -14,7 +14,10 @@
 
 <template name="introduction">
   <h1>Chipotle Calorie Counter</h1>
-  <h2 id="totalCalories">Total Calories: {{totalCalories}}</h2>
+  <div id="totalCalories">
+	  <h2>{{totalCalories}} Calories</h2>
+	  <img src="chipotle-burrito.png">
+  </div>
 </template>
 
 <template name="chooseRice">
@@ -50,13 +53,11 @@
 	  <label><input type="checkbox" name="salsa" class="extra" value="medium">Medium</label>
 	  <label><input type="checkbox" name="salsa" class="extra" value="hot">Hot</label>
 	</fieldset>
-
 	<fieldset>
-		<legend>Extras</legend>
+		<legend>Other extras</legend>
 		<label><input type="checkbox" name="sour_cream" class="extra" value="sour_cream">Sour cream</label>
-		<label><input type="checkbox" name="cheese" class="extra" value="cheese">Cheese?</label>
-		<label><input type="checkbox" name="guacamole" class="extra" value="guacamole">Guacamole?</label>
-		<label><input type="checkbox" name="lettuce" class="extra" value="lettuce">Lettuce?</label>
+		<label><input type="checkbox" name="cheese" class="extra" value="cheese">Cheese</label>
+		<label><input type="checkbox" name="guacamole" class="extra" value="guacamole">Guacamole</label>
+		<label><input type="checkbox" name="lettuce" class="extra" value="lettuce">Lettuce</label>
 	</fieldset>
-
 </template>
