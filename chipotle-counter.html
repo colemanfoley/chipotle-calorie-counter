@@ -1,63 +1,46 @@
 <head>
   <title>Chipotle Calorie Counter</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-	{{> introduction}}
+	<header id="introduction">
+	  <h1>Chipotle Calorie Counter</h1>
+	  <div id="totalCalories">
+		  <h2>Calories</h2>
+		  <img src="public/chipotle-burrito.png">
+	  </div>
+	</header>
 	<form>
-	  {{> chooseRice}}
-	  {{> chooseBeans}}
-	  {{> chooseMeat}}
-	  {{> chooseExtras}}
+	  <fieldset>
+	  	<legend>Choose a type of rice:</legend>
+		  <label><input type="radio" class="rice" name="rice" value="white_rice">White Rice</label>
+		  <label><input type="radio" class="rice" name="rice" value="brown_rice">Brown Rice</label>
+	  </fieldset>
+		<fieldset>
+			<legend>Choose a type of bean:</legend>
+			<label><input type="radio" class="beans" name="beans" value="black_beans">Black</label>
+		  <label><input type="radio" class="beans" name="beans" value="pinto_beans">Pinto</label>
+		</fieldset>
+		<fieldset>
+			<legend>Choose a type of meat:</legend>
+			<label><input type="radio" name="meat" class="meat" value="steak">Steak</label>
+			<label><input type="radio" name="meat" class="meat" value="chicken">Chicken</label>
+			<label><input type="radio" name="meat" class="meat" value="carnitas">Carnitas</label>
+		  <label><input type="radio" name="meat" class="meat" value="barbacoa">Barbacoa</label>
+		</fieldset>
+		<fieldset>
+			<legend>Which salsas?</legend>
+			<label><input type="checkbox" name="salsa" class="extra" value="mild">Mild</label>
+		  <label><input type="checkbox" name="salsa" class="extra" value="medium">Medium</label>
+		  <label><input type="checkbox" name="salsa" class="extra" value="hot">Hot</label>
+		</fieldset>
+		<fieldset>
+			<legend>Other extras</legend>
+			<label><input type="checkbox" name="sour_cream" class="extra" value="sour_cream">Sour cream</label>
+			<label><input type="checkbox" name="cheese" class="extra" value="cheese">Cheese</label>
+			<label><input type="checkbox" name="guacamole" class="extra" value="guacamole">Guacamole</label>
+			<label><input type="checkbox" name="lettuce" class="extra" value="lettuce">Lettuce</label>
+		</fieldset>
 	</form>
 </body>
-
-<template name="introduction">
-  <h1>Chipotle Calorie Counter</h1>
-  <div id="totalCalories">
-	  <h2>{{totalCalories}} Calories</h2>
-	  <img src="chipotle-burrito.png">
-  </div>
-</template>
-
-<template name="chooseRice">
-  <fieldset>
-  	<legend>Choose a type of rice:</legend>
-	  <label><input type="radio" class="rice" name="rice" value="white_rice">White Rice</label>
-	  <label><input type="radio" class="rice" name="rice" value="brown_rice">Brown Rice</label>
-  </fieldset>
-</template>
-
-<template name="chooseBeans">
-	<fieldset>
-		<legend>Choose a type of bean:</legend>
-		<label><input type="radio" class="beans" name="beans" value="black_beans">Black</label>
-	  <label><input type="radio" class="beans" name="beans" value="pinto_beans">Pinto</label>
-	</fieldset>
-</template>
-
-<template name="chooseMeat">
-	<fieldset>
-		<legend>Choose a type of meat:</legend>
-		<label><input type="radio" name="meat" class="meat" value="steak">Steak</label>
-		<label><input type="radio" name="meat" class="meat" value="chicken">Chicken</label>
-		<label><input type="radio" name="meat" class="meat" value="carnitas">Carnitas</label>
-	  <label><input type="radio" name="meat" class="meat" value="barbacoa">Barbacoa</label>
-	</fieldset>
-</template>
-
-<template name="chooseExtras">
-	<fieldset>
-		<legend>Which salsas?</legend>
-		<label><input type="checkbox" name="salsa" class="extra" value="mild">Mild</label>
-	  <label><input type="checkbox" name="salsa" class="extra" value="medium">Medium</label>
-	  <label><input type="checkbox" name="salsa" class="extra" value="hot">Hot</label>
-	</fieldset>
-	<fieldset>
-		<legend>Other extras</legend>
-		<label><input type="checkbox" name="sour_cream" class="extra" value="sour_cream">Sour cream</label>
-		<label><input type="checkbox" name="cheese" class="extra" value="cheese">Cheese</label>
-		<label><input type="checkbox" name="guacamole" class="extra" value="guacamole">Guacamole</label>
-		<label><input type="checkbox" name="lettuce" class="extra" value="lettuce">Lettuce</label>
-	</fieldset>
-</template>
