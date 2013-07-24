@@ -1,41 +1,50 @@
 <head>
   <title>Chipotle Calorie Counter</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="jquery-1.10.2.js"></script>
+  <script type="text/javascript" src="app.js"></script>
 </head>
 
 <body>
 	<header id="introduction">
 	  <h1>Chipotle Calorie Counter</h1>
 	  <div id="totalCalories">
-		  <h2>Calories</h2>
+		  <h2><span id="calorieCount"></span> Calories</h2>
 		  <img src="public/chipotle-burrito.png">
 	  </div>
 	</header>
 	<form>
-	  <fieldset>
+		<fieldset id="coverings">
+			<legend>Burrito, Bowl, Tacos, or Salad?</legend>
+			<label><input type="radio" name="covering" class="covering" value="burrito">Burrito</label>
+			<label><input type="radio" name="covering" class="covering" value="bowl">Bowl</label>
+			<label><input type="radio" name="covering" class="covering" value="tacos">Tacos</label>
+		  <label><input type="radio" name="covering" class="covering" value="salad">Salad</label>
+		</fieldset>
+	  <fieldset id="rice">
 	  	<legend>Choose a type of rice:</legend>
 		  <label><input type="radio" class="rice" name="rice" value="white_rice">White Rice</label>
 		  <label><input type="radio" class="rice" name="rice" value="brown_rice">Brown Rice</label>
 	  </fieldset>
-		<fieldset>
+		<fieldset id="beans">
 			<legend>Choose a type of bean:</legend>
 			<label><input type="radio" class="beans" name="beans" value="black_beans">Black</label>
 		  <label><input type="radio" class="beans" name="beans" value="pinto_beans">Pinto</label>
 		</fieldset>
-		<fieldset>
+		<fieldset id="meat">
 			<legend>Choose a type of meat:</legend>
 			<label><input type="radio" name="meat" class="meat" value="steak">Steak</label>
 			<label><input type="radio" name="meat" class="meat" value="chicken">Chicken</label>
 			<label><input type="radio" name="meat" class="meat" value="carnitas">Carnitas</label>
 		  <label><input type="radio" name="meat" class="meat" value="barbacoa">Barbacoa</label>
 		</fieldset>
-		<fieldset>
+		<fieldset id="salsa">
 			<legend>Which salsas?</legend>
 			<label><input type="checkbox" name="salsa" class="extra" value="mild">Mild</label>
 		  <label><input type="checkbox" name="salsa" class="extra" value="medium">Medium</label>
 		  <label><input type="checkbox" name="salsa" class="extra" value="hot">Hot</label>
 		</fieldset>
-		<fieldset>
+		<fieldset id="other">
 			<legend>Other extras</legend>
 			<label><input type="checkbox" name="sour_cream" class="extra" value="sour_cream">Sour cream</label>
 			<label><input type="checkbox" name="cheese" class="extra" value="cheese">Cheese</label>

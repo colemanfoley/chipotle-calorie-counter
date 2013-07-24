@@ -4,6 +4,7 @@ h1 {
 }
 
 fieldset {
+	display: hidden;
 	float: left;
 	max-width: 500px;
 	height: 150px;
@@ -15,10 +16,9 @@ label {
 }
 
 form {
-	max-width: 800px;
+	max-width: 1000px;
 	margin-left: auto;
 	margin-right: auto;
-
 }
 
 #totalCalories {
@@ -30,4 +30,8 @@ form {
 
 img	{
 	width: 100%
+}
+
+#rice, #beans, #meat, #salsa, #other {
+	display: none;
 }
