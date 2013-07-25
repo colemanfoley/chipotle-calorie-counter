@@ -6,8 +6,8 @@ h1 {
 fieldset {
 	display: hidden;
 	float: left;
+	height: 200px;
 	max-width: 500px;
-	height: 150px;
 	margin-bottom: 100px;
 }
 

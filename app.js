@@ -23,22 +23,22 @@ $(document).ready(function() {
 		var formSection = $(this).parent().parent().attr('id');
 		var inputValue = $(this).val();
 		if(formSection === 'coverings') {
-			handleCoveringClick(inputValue);
+			updateCoveringCalories(inputValue);
 		} else if(formSection === 'rice') {
-			handleRiceClick(inputValue);
+			updateRiceCalories(inputValue);
 		} else if(formSection === 'beans') {
-			handleBeansClick(inputValue);
+			updateBeansCalories(inputValue);
 		} else if(formSection === 'meat') {
-			handleMeatClick(inputValue);
+			updateMeatCalories(inputValue);
 		} else if(formSection === 'extras') {
-			handleExtrasClick(inputValue);
+			updateExtrasCalories(inputValue);
 		}
 
 		$('#calorieCount').text(calories.total());
 		resizeBurrito();
 	});
 
-	var handleCoveringClick = function(coveringType) {
+	var updateCoveringCalories = function(coveringType) {
 		switch(coveringType){
 			case 'burrito':
 				calories.covering = 290;
@@ -55,7 +55,7 @@ $(document).ready(function() {
 		};
 	};
 
-	var handleRiceClick = function(riceType) {
+	var updateRiceCalories = function(riceType) {
 		switch(riceType){
 			case 'white_rice':
 				calories.rice = 170;
@@ -66,11 +66,11 @@ $(document).ready(function() {
 		};
 	};
 
-	var handleBeansClick = function(beansType) {
+	var updateBeansCalories = function(beansType) {
 		calories.beans = 120;
 	};
 
-	var handleMeatClick = function(meatType) {
+	var updateMeatCalories = function(meatType) {
 		switch(meatType){
 			case 'steak':
 				calories.meat = 190;
@@ -90,7 +90,8 @@ $(document).ready(function() {
 		};
 	};
 
-	var handleExtrasClick = function(extraType) {
+
+	var updateExtrasCalories = function(extraType) {
 		calories.extras = 0;
 	  $('input.extra:checked').each(function(element){
 	    if(this.value === "mild"){
@@ -99,6 +100,8 @@ $(document).ready(function() {
 	      calories.extras += 15;
 	    } else if (this.value === "hot") {
 	      calories.extras += 40;
+	    } else if (this.value === "corn_salsa") {
+	      calories.extras += 80;
 	    } else if (this.value === "sour_cream"){
 	      calories.extras += 120;
 	    } else if (this.value === "cheese"){
