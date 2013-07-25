@@ -6,8 +6,8 @@ h1 {
 fieldset {
 	display: hidden;
 	float: left;
+	height: 200px;
 	max-width: 500px;
-	height: 150px;
 	margin-bottom: 100px;
 }
 
@@ -23,15 +23,16 @@ form {
 
 #totalCalories {
 	text-align: center;
-	width: 500px;
+	width: 150px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-img	{
-	width: 100%
+#burritoImage {
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
 }
-
-#other {
-	display: none;
+img	{
+	width: 100%;
 }
